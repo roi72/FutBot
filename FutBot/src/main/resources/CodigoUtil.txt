@@ -1,0 +1,304 @@
+public static ArrayList<Result> filtrarPalabras(){
+
+        HashMap<Integer, String> statsMap = new HashMap<>();
+        String[] statsArray = elementosAFiltrar.split(", ");
+
+        for (int i = 0; i < statsArray.length; i++) {
+            statsMap.put(i + 1, statsArray[i]);
+        }
+        System.out.println(statsMap);
+
+
+
+        String goles = statsMap.get(1);
+        String pasesProfundidad = statsMap.get(9);
+        String corners = statsMap.get(7);
+        String posesion = statsMap.get(2);
+        String fuerasJuego = statsMap.get(23);
+        String ocasionesClaras = statsMap.get(4);
+        String tirosTotales = statsMap.get(13);
+        String tirosPuerta = statsMap.get(14);
+        String tirosPalo = statsMap.get(15);
+        String tirosFuera = statsMap.get(16);
+        String tirosBloqueados = statsMap.get(17);
+        String entradas = statsMap.get(10);
+        String faltas = statsMap.get(8);
+        String tarjetasAmarillas = statsMap.get(12);
+
+
+        String[] partesGoles = goles.split(": ");
+        String valoresGoles = partesGoles[1];
+
+        String[] partesPasesProfundidad = pasesProfundidad.split(": ");
+        String valoresPasesProfundidad = partesPasesProfundidad[1];
+
+        String[] partesCorners = corners.split(": ");
+        String valoresCorners = partesCorners[1];
+
+        String[] partesPosesion = posesion.split(": ");
+        String valoresPosesion = partesPosesion[1];
+
+        String[] partesFuerasJuego = fuerasJuego.split(": ");
+        String valoresFuerasJuego = partesFuerasJuego[1];
+
+        String[] partesOcasionesClaras = ocasionesClaras.split(": ");
+        String valoresOcasionesClaras = partesOcasionesClaras[1];
+
+        String[] partesTirosTotales = tirosTotales.split(": ");
+        String valoresTirosTotales = partesTirosTotales[1];
+
+        String[] partesTirosPuerta = tirosPuerta.split(": ");
+        String valoresTirosPuerta = partesTirosPuerta[1];
+
+        String[] partesTirosPalo = tirosPalo.split(": ");
+        String valoresTirosPalo = partesTirosPalo[1];
+
+        String[] partesTirosFuera = tirosFuera.split(": ");
+        String valoresTirosFuera = partesTirosFuera[1];
+
+        String[] partesTirosBloqueados = tirosBloqueados.split(": ");
+        String valoresTirosBloqueados = partesTirosBloqueados[1];
+
+        String[] partesEntradas = entradas.split(": ");
+        String valoresEntradas = partesEntradas[1];
+
+        String[] partesFaltas = faltas.split(": ");
+        String valoresFaltas = partesFaltas[1];
+
+        String[] partesTarjetasAmarillas = tarjetasAmarillas.split(": ");
+        String valoresTarjetasAmarillas = partesTarjetasAmarillas[1];
+
+
+        String[] listGoles = valoresGoles.split("-");
+        String[] listPasesProfundidad = valoresPasesProfundidad.split("-");
+        String[] listCorners = valoresCorners.split("-");
+        String[] listPosesion = valoresPosesion.split("-");
+        String[] listFuerasJuego = valoresFuerasJuego.split("-");
+        String[] listOcasionesClaras = valoresOcasionesClaras.split("-");
+        String[] listTirosTotales = valoresTirosTotales.split("-");
+        String[] listTirosPuerta = valoresTirosPuerta.split("-");
+        String[] listTirosPalo = valoresTirosPalo.split("-");
+        String[] listTirosFuera = valoresTirosFuera.split("-");
+        String[] listTirosBloqueados = valoresTirosBloqueados.split("-");
+        String[] listEntradas = valoresEntradas.split("-");
+        String[] listFaltas = valoresFaltas.split("-");
+        String[] listTarjetasAmarillas = valoresTarjetasAmarillas.split("-");
+
+
+        int goles1 = Integer.parseInt(listGoles[0]);
+        int goles2 = Integer.parseInt(listGoles[1]);
+
+        int pasesProfundidad1 = Integer.parseInt(listPasesProfundidad[0]);
+        int pasesProfundidad2 = Integer.parseInt(listPasesProfundidad[1]);
+
+        int corners1 = Integer.parseInt(listCorners[0]);
+        int corners2 = Integer.parseInt(listCorners[1]);
+
+        int posesion1 = Integer.parseInt(listPosesion[0].replace("%", ""));
+        int posesion2 = Integer.parseInt(listPosesion[1].replace("%", ""));
+
+        int fuerasJuego1 = Integer.parseInt(listFuerasJuego[0]);
+        int fuerasJuego2 = Integer.parseInt(listFuerasJuego[1]);
+
+        int ocasionesClaras1 = Integer.parseInt(listOcasionesClaras[0]);
+        int ocasionesClaras2 = Integer.parseInt(listOcasionesClaras[1]);
+
+        int tirosTotales1 = Integer.parseInt(listTirosTotales[0]);
+        int tirosTotales2 = Integer.parseInt(listTirosTotales[1]);
+
+        int tirosPuerta1 = Integer.parseInt(listTirosPuerta[0]);
+        int tirosPuerta2 = Integer.parseInt(listTirosPuerta[1]);
+
+        int tirosPalo1 = Integer.parseInt(listTirosPalo[0]);
+        int tirosPalo2 = Integer.parseInt(listTirosPalo[1]);
+
+        int tirosFuera1 = Integer.parseInt(listTirosFuera[0]);
+        int tirosFuera2 = Integer.parseInt(listTirosFuera[1]);
+
+        int tirosBloqueados1 = Integer.parseInt(listTirosBloqueados[0]);
+        int tirosBloqueados2 = Integer.parseInt(listTirosBloqueados[1]);
+
+        int entradas1 = Integer.parseInt(listEntradas[0]);
+        int entradas2 = Integer.parseInt(listEntradas[1]);
+
+        int faltas1 = Integer.parseInt(listFaltas[0]);
+        int faltas2 = Integer.parseInt(listFaltas[1]);
+
+        int tarjetasAmarillas1 = Integer.parseInt(listTarjetasAmarillas[0]);
+        int tarjetasAmarillas2 = Integer.parseInt(listTarjetasAmarillas[1]);
+
+        Result resultado1 = new Result("Equipo1", "Partido1", 1, posesion1, goles1, corners1, fuerasJuego1,
+                pasesProfundidad1, ocasionesClaras1, tirosTotales1, tirosPuerta1, tirosPalo1, tirosFuera1, tirosBloqueados1,
+                entradas1, faltas1, tarjetasAmarillas1);
+
+        Result resultado2 = new Result("Equipo2", "Partido1", 1, posesion2, goles2, corners2, fuerasJuego2,
+                pasesProfundidad2, ocasionesClaras2, tirosTotales2, tirosPuerta2, tirosPalo2, tirosFuera2, tirosBloqueados2,
+                entradas2, faltas2, tarjetasAmarillas2);
+
+        ArrayList<Result> listaResultados = new ArrayList<>();
+        listaResultados.add(resultado1);
+        listaResultados.add(resultado2);
+
+
+
+
+        System.out.println(goles1);
+        System.out.println(goles2);
+        System.out.println(corners1);
+        System.out.println(corners2);
+        System.out.println(posesion1);
+        System.out.println(posesion2);
+        System.out.println(fuerasJuego1);
+        System.out.println(fuerasJuego2);
+        System.out.println(ocasionesClaras1);
+        System.out.println(ocasionesClaras2);
+        System.out.println(tirosTotales1);
+        System.out.println(tirosTotales2);
+        System.out.println(tirosPuerta1);
+        System.out.println(tirosPuerta2);
+        System.out.println(tirosPalo1);
+        System.out.println(tirosPalo2);
+        System.out.println(tirosFuera1);
+        System.out.println(tirosFuera2);
+        System.out.println(tirosBloqueados1);
+        System.out.println(tirosBloqueados2);
+        System.out.println(entradas1);
+        System.out.println(entradas2);
+        System.out.println(faltas1);
+        System.out.println(faltas2);
+        System.out.println(tarjetasAmarillas1);
+        System.out.println(tarjetasAmarillas2);
+
+        return listaResultados;
+
+    }
+
+    import org.openqa.selenium.By;
+    import org.openqa.selenium.WebDriver;
+    import org.openqa.selenium.WebElement;
+    import org.openqa.selenium.chrome.ChromeDriver;
+    import org.openqa.selenium.support.ui.ExpectedConditions;
+    import org.openqa.selenium.support.ui.WebDriverWait;
+
+    import java.time.Duration;
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class Main {
+        public static String elementosAFiltrar;
+
+        public static void main(String[] args) {
+
+
+            System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+
+            WebDriver driver = new ChromeDriver();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+
+            driver.get("https://www.sofascore.com/es/torneo/futbol/spain/laliga/8#id:61643");
+
+
+
+
+            try {
+                WebElement consentButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".fc-button.fc-cta-consent.fc-primary-button")));
+                consentButton.click();
+                System.out.println("Consentimiento aceptado automáticamente.");
+            } catch (Exception e) {
+                System.out.println("No se encontró el popup de consentimiento o ya fue aceptado.");
+            }
+
+            try {
+                WebElement dropdownButton = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//div[contains(@class, 'Box laShVk')]//button[contains(@class, 'jQruaf')]")
+                ));
+                dropdownButton.click();
+
+                WebElement ronda1Option = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//li[@role='option' and contains(@class, 'DropdownItem') and text()='Ronda 1']")));
+                ronda1Option.click();
+                String ronda = "Ronda 1";
+
+
+                // --------------------------
+
+
+                WebElement partidoWeb = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//a[contains(@href, '/es/football/match/getafe-athletic-club')]")
+                ));
+
+                String href = partidoWeb.getAttribute("href");
+                String partido = href.split("/match/")[1].split("/")[0];
+                partido = partido.replace("-club", "club");
+
+                System.out.println("Resultado almacenado: " + partido);
+
+                partidoWeb.click();
+                System.out.println("Partido seleccionado correctamente.");
+
+                WebElement estadisticasTab = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//h2[@data-tabid='statistics']/a")
+                ));
+                estadisticasTab.click();
+                System.out.println("Pestaña de estadísticas abierta correctamente.");
+
+                wait.until(ExpectedConditions.presenceOfElementLocated(
+                        By.xpath("//div[contains(@class, 'Box Flex heNsMA bnpRyo')]")
+                ));
+
+                List<WebElement> estadisticasElements = driver.findElements(By.xpath("//div[contains(@class, 'Box Flex heNsMA bnpRyo')]")
+                );
+
+                StringBuilder estadisticasConcatenadas = new StringBuilder();
+
+                try {
+                    WebElement leftScoreElement = wait.until(ExpectedConditions.presenceOfElementLocated(
+                            By.xpath("//span[@data-testid='left_score']")
+                    ));
+                    WebElement rightScoreElement = wait.until(ExpectedConditions.presenceOfElementLocated(
+                            By.xpath("//span[@data-testid='right_score']")
+                    ));
+
+                    String leftScore = leftScoreElement.getText();
+                    String rightScore = rightScoreElement.getText();
+
+                    String resultadoGoles = "Resultado: " + leftScore + "-" + rightScore;
+                    estadisticasConcatenadas.append(resultadoGoles).append(", ");
+                } catch (Exception e) {
+                    System.out.println("Error al extraer el marcador del partido: " + e.getMessage());
+                }
+
+                for (WebElement estadistica : estadisticasElements) {
+                    try {
+                        String valorEquipo1 = estadistica.findElement(By.xpath("./bdi[1]/span")).getText();
+                        String nombreEstadistica = estadistica.findElement(By.xpath("./bdi[2]/div/span")).getText();
+                        String valorEquipo2 = estadistica.findElement(By.xpath("./bdi[3]/span")).getText();
+
+                        estadisticasConcatenadas.append(nombreEstadistica).append(": ")
+                                .append(valorEquipo1).append("-").append(valorEquipo2).append(", ");
+                    } catch (Exception e) {
+                        System.out.println("Error al extraer una estadística: " + e.getMessage());
+                    }
+                }
+
+                if (estadisticasConcatenadas.length() > 2) {
+                    estadisticasConcatenadas.setLength(estadisticasConcatenadas.length() - 2);
+                }
+
+                elementosAFiltrar = estadisticasConcatenadas.toString();
+
+                ArrayList<Result> listaResultados;
+
+                listaResultados = Filter.filtrarPalabras();
+
+                Hibernate.insertarHib(listaResultados);
+
+
+            } catch (Exception e) {
+                System.out.println("Error al interactuar con la página: " + e.getMessage());
+            } finally {
+                driver.quit();
+            }
+        }
+    }

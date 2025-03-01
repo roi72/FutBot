@@ -3,7 +3,7 @@ package Clases;
 import jakarta.persistence.*;
 
 @Entity
-public class  Result {
+public class Result {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
